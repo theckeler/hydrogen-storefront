@@ -42,12 +42,15 @@ export function HeaderCtas({isLoggedIn, cart}) {
                 return (
                   <a href="#cart-aside" className={buttonCSS}>
                     <Icons icon="cart" className="" />
-                    <div
-                      className="absolute top-1 right-1 rounded-full bg-blue-300 p-1 w-5 h-5 flex justify-center items-center"
-                      style={{fontSize: '10px'}}
-                    >
-                      {/* {cart.totalQuantity > 0 ? cart.totalQuantity : 0} */}
-                    </div>
+
+                    {cart?.totalQuantity > 0 && (
+                      <div
+                        className="absolute top-1 right-1 rounded-full bg-blue-300 p-1 w-5 h-5 flex justify-center items-center"
+                        style={{fontSize: '10px'}}
+                      >
+                        {cart.totalQuantity}
+                      </div>
+                    )}
                     <IconText text="Cart" />
                   </a>
                 );
