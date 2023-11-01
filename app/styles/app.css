@@ -127,7 +127,7 @@ aside li {
 * components/Header
 * --------------------------------------------------
 */
-.header {
+/* .header {
   align-items: center;
   background: #fff;
   display: flex;
@@ -169,7 +169,7 @@ aside li {
   display: flex;
   grid-gap: 1rem;
   margin-left: auto;
-}
+} */
 
 /*
 * --------------------------------------------------
