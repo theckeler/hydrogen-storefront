@@ -1,6 +1,5 @@
 import {Await, NavLink} from '@remix-run/react';
 import {Suspense} from 'react';
-import {CartBadge} from './CartBadge';
 import {IconText} from '../IconText';
 import {Icons} from '../Icons';
 
@@ -37,7 +36,7 @@ export function HeaderCtas({isLoggedIn, cart}) {
           </a>
         </li>
         <li>
-          <Suspense fallback={<CartBadge count={0} className={buttonCSS} />}>
+          <Suspense fallback={<Icons icon="cart" className="" />}>
             <Await resolve={cart}>
               {(cart) => {
                 return (
