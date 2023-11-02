@@ -1,5 +1,7 @@
 import {NavLink, useMatches} from '@remix-run/react';
-import {activeLinkStyle} from '../activeLinkStyle';
+import {activeLinkStyle} from '@/components/activeLinkStyle';
+import {CloseAside} from '@/components/Asides/CloseAside';
+import {HeaderAside} from '@/components/Asides/Header';
 
 export function HeaderMenu({menu, viewport}) {
   const [root] = useMatches();
@@ -13,8 +15,17 @@ export function HeaderMenu({menu, viewport}) {
   }
 
   return (
-    <nav className="ml-8" role="navigation">
-      <ul className=" gap-2 align-middle hidden lg:flex">
+    <nav
+      className="z-0 lg:ml-8 fixed right-0 top-0 invisible lg:visible target:visible lg:relative target:z-50 min-w-[400px] w-full h-full"
+      role="navigation"
+      id="main-menu"
+    >
+      <CloseAside
+        className="w-full h-full bg-blue-200/80 lg:hidden"
+        svg={false}
+      />
+      <ul className="bg-white lg:bg-transparent gap-2 align-middle lg:flex flex-col lg:flex-row p-4 max-w-sm absolute lg:relative top-0 right-0 h-[calc(100vh-114px)] lg:h-auto max-h-screen min-h-[100dvh] lg:min-h-min min-w-[400px] drop-shadow lg:drop-shadow-none">
+        <HeaderAside heading={false} className="lg:hidden" />
         {/* {(menu || FALLBACK_HEADER_MENU).items.map((item) => { */}
         {menu.items.map((item, i) => {
           // if (!item.url) return null;

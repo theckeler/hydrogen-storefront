@@ -1,6 +1,3 @@
-
-export function IconText({text}) {
-  return <span className="hidden md:block text-xs">{text}</span>;
+export function IconText({text, className}) {
+  return <span className={`hidden lg:block text-xs ${className}`}>{text}</span>;
 }
-
-
