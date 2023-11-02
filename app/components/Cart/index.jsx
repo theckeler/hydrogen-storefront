@@ -10,8 +10,11 @@ export function CartMain({layout, cart}) {
 
   return (
     <div className={className}>
-      <CartEmpty hidden={linesCount} layout={layout} />
-      <CartDetails cart={cart} layout={layout} />
+      {!!cart && cart.totalQuantity > 0 ? (
+        <CartDetails cart={cart} layout={layout} />
+      ) : (
+        <CartEmpty hidden={linesCount} layout={layout} />
+      )}
     </div>
   );
 }

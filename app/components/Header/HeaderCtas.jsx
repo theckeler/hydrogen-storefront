@@ -5,10 +5,10 @@ import {Icons} from '../Icons';
 
 export function HeaderCtas({isLoggedIn, cart}) {
   const buttonCSS =
-    'w-12 md:w-auto h-12 block p-2 border border-white rounded relative lg:grid lg:grid-cols-2 items-center bg-sky-200 lg:min-w-[120px] lg:hover:bg-yellow-500 group';
-  const iconCSS = 'fill-gray-800';
+    'w-12 md:w-auto h-12 block p-2 border border-slate-400 lg:border-slate-200 rounded relative lg:grid lg:grid-cols-[34px_1fr] lg:gap-1 items-center bg-white  lg:hover:bg-yellow-500 group';
+  const iconCSS = 'fill-slate-800';
   // const iconCSS = 'fill-gray-800 lg:group-hover:fill-sky-200';
-  const iconTextCSS = 'text-gray-800';
+  const iconTextCSS = 'text-slate-800';
   // const iconTextCSS = 'text-gray-800 lg:group-hover:text-sky-200';
 
   return (
@@ -37,10 +37,9 @@ export function HeaderCtas({isLoggedIn, cart}) {
                 return (
                   <a href="#cart-aside" className={buttonCSS}>
                     <Icons icon="cart" className={iconCSS} />
-
                     {cart?.totalQuantity > 0 && (
                       <div
-                        className="absolute top-1 right-1 rounded-full bg-blue-300 p-1 w-5 h-5 flex justify-center items-center"
+                        className="absolute top-1 right-1 lg:right-auto lg:left-8 rounded-full bg-yellow-400 p-1 w-5 h-5 flex justify-center items-center"
                         style={{fontSize: '10px'}}
                       >
                         {cart.totalQuantity}
