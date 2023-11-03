@@ -20,9 +20,7 @@ export default function Homepage() {
   const data = useLoaderData();
   return (
     <>
-      <div className="max-h-96 overflow-hidden">
-        <FeaturedCollection collection={data.featuredCollection} />
-      </div>
+      <FeaturedCollection collection={data.featuredCollection} />
       <RecommendedProducts products={data.recommendedProducts} />
     </>
   );
