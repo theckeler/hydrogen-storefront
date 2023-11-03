@@ -37,7 +37,7 @@ export function SearchForm({searchTerm, className, id}) {
   }, []);
 
   return (
-    <div className={className + ' relative'}>
+    <div className={className + ' relative'} id={id}>
       <PredictiveSearchForm className="w-full xl:max-w-xl">
         {/* <Form
           method="get"
