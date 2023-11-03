@@ -5,8 +5,8 @@ import {Icons} from '../Icons';
 
 export function HeaderCtas({isLoggedIn, cart}) {
   const buttonCSS =
-    'w-12 lg:w-auto h-12 block p-2 rounded relative lg:grid lg:grid-cols-[34px_1fr] lg:gap-1 items-center bg-white lg:hover:bg-yellow-500 group';
-  const iconCSS = 'fill-slate-800';
+    'w-12 lg:w-auto block p-2 rounded relative text-center bg-white lg:hover:bg-yellow-500 group';
+  const iconCSS = 'lg:max-h-8 fill-slate-800';
   // const iconCSS = 'fill-gray-800 lg:group-hover:fill-sky-200';
   const iconTextCSS = 'text-slate-800';
   // const iconTextCSS = 'text-gray-800 lg:group-hover:text-sky-200';
