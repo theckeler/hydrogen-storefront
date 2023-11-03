@@ -1,8 +1,6 @@
 import {Aside} from '~/components/Asides';
-import {
-  PredictiveSearchForm,
-  PredictiveSearchResults,
-} from '~/components/Search';
+import {PredictiveSearchForm} from '../Search/NoSearchResults';
+import {PredictiveSearchResults} from '../Search/PredictiveSearchResults';
 
 export function SearchAside() {
   return (

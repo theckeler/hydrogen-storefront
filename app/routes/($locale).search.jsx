@@ -2,7 +2,9 @@ import {defer} from '@shopify/remix-oxygen';
 import {useLoaderData} from '@remix-run/react';
 import {getPaginationVariables} from '@shopify/hydrogen';
 
-import {SearchForm, SearchResults, NoSearchResults} from '~/components/Search';
+import {SearchForm} from '~/components/Search';
+import {SearchResults} from '~/components/Search/SearchResults';
+import {NoSearchResults} from '~/components/Search/NoSearchResults';
 
 export const meta = () => {
   return [{title: `Hydrogen | Search`}];

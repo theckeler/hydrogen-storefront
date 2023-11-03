@@ -63,7 +63,7 @@ export default function Login() {
   const error = data?.error || null;
 
   return (
-    <div className="login">
+    <div className="p-2">
       <h1>Sign in.</h1>
       <Form method="POST">
         <fieldset>

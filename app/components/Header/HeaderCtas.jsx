@@ -5,7 +5,7 @@ import {Icons} from '../Icons';
 
 export function HeaderCtas({isLoggedIn, cart}) {
   const buttonCSS =
-    'w-12 md:w-auto h-12 block p-2 rounded relative lg:grid lg:grid-cols-[34px_1fr] lg:gap-1 items-center bg-white lg:hover:bg-yellow-500 group';
+    'w-12 lg:w-auto h-12 block p-2 rounded relative lg:grid lg:grid-cols-[34px_1fr] lg:gap-1 items-center bg-white lg:hover:bg-yellow-500 group';
   const iconCSS = 'fill-slate-800';
   // const iconCSS = 'fill-gray-800 lg:group-hover:fill-sky-200';
   const iconTextCSS = 'text-slate-800';
@@ -13,7 +13,7 @@ export function HeaderCtas({isLoggedIn, cart}) {
 
   return (
     <nav role="navigation">
-      <ul className="flex gap-2 items-center">
+      <ul className="grid grid-cols-3 lg:grid-cols-2 gap-1 lg:gap-2 items-center">
         <li>
           <a href="#account-aside" className={buttonCSS}>
             {isLoggedIn ? (
