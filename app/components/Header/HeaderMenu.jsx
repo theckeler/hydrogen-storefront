@@ -9,7 +9,7 @@ export function HeaderMenu({menu, viewport}) {
 
   return (
     <nav
-      className="z-0 lg:ml-8 fixed right-0 top-0 invisible lg:visible target:visible lg:relative target:z-50 w-full h-full"
+      className="z-0 fixed right-0 top-0 invisible lg:visible target:visible lg:relative target:z-50 w-full h-full"
       role="navigation"
       id="main-menu"
     >
@@ -17,10 +17,10 @@ export function HeaderMenu({menu, viewport}) {
         <HeaderAside heading={false} className="lg:hidden" />
         {/* {(menu || FALLBACK_HEADER_MENU).items.map((item) => { */}
 
-        <ul className="p-2 lg:flex gap-2">
+        <ul className="lg:flex gap-2">
           <li>
             <NavLink to="/collections" className="flex items-center">
-              <span className="h-8 w-8">
+              <span className="h-6 w-6">
                 <Icons icon="arrowdropdown" />
               </span>
               Collections
@@ -28,7 +28,7 @@ export function HeaderMenu({menu, viewport}) {
           </li>
           <li>
             <NavLink to="/collections" className="flex items-center">
-              <span className="h-8 w-8">
+              <span className="h-6 w-6">
                 <Icons icon="arrowdropdown" />
               </span>
               Collections
@@ -36,7 +36,7 @@ export function HeaderMenu({menu, viewport}) {
           </li>
           <li>
             <NavLink to="/collections" className="flex items-center">
-              <span className="h-8 w-8">
+              <span className="h-6 w-6">
                 <Icons icon="arrowdropdown" />
               </span>
               Collections

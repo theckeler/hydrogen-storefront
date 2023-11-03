@@ -11,7 +11,7 @@ export function Header({header, isLoggedIn, cart}) {
           <HeaderLogo />
         </li>
         <li>
-          <HeaderMenu viewport="desktop" />
+          {/* <HeaderMenu viewport="desktop" /> */}
         </li>
         <li className="ml-auto">
           <HeaderCtas isLoggedIn={isLoggedIn} cart={cart} />
