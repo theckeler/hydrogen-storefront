@@ -12,20 +12,18 @@ export function HeaderMenu({menu, viewport}) {
       role="navigation"
       id="main-menu"
     >
-      <CloseAside
-        className="w-full h-full bg-blue-200/80 lg:hidden"
-        svg={false}
-      />
-      <ul className="bg-white lg:bg-transparent gap-2 align-middle lg:flex flex-col lg:flex-row p-4 absolute lg:relative top-0 right-0 h-[calc(100vh-114px)] lg:h-auto max-h-screen min-h-[100dvh] lg:min-h-min max-w-2xl w-full drop-shadow lg:drop-shadow-none">
+      <div className="bg-white lg:bg-transparent gap-2 align-middle lg:flex flex-col lg:flex-row absolute lg:relative top-0 right-0 h-[calc(100vh-114px)] lg:h-auto max-h-screen min-h-[100dvh] lg:min-h-min max-w-2xl w-full drop-shadow lg:drop-shadow-none">
         <HeaderAside heading={false} className="lg:hidden" />
         {/* {(menu || FALLBACK_HEADER_MENU).items.map((item) => { */}
-        <li>
-          <NavLink to="/collections">Collections</NavLink>
-        </li>
-        <li>nav</li>
-        <li>nav</li>
-        <li>nav</li>
-        {/* {menu.items.map((item, i) => {
+
+        <ul className="p-2">
+          <li>
+            <NavLink to="/collections">Collections</NavLink>
+          </li>
+          <li>nav</li>
+          <li>nav</li>
+          <li>nav</li>
+          {/* {menu.items.map((item, i) => {
           // if (!item.url) return null;
 
           // if the url is internal, we strip the domain
@@ -50,7 +48,8 @@ export function HeaderMenu({menu, viewport}) {
             </li>
           );
         })} */}
-      </ul>
+        </ul>
+      </div>
     </nav>
   );
 }
