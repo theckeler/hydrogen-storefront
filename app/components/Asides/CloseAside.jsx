@@ -6,8 +6,10 @@ export function CloseAside({className, svg = true}) {
     <button
       className={className}
       onClick={() => {
-        const history = window.history;
+        var history = window.history;
         history.go(-1);
+        // history.go(-1);
+        window.location.hash = '';
       }}
     >
       {svg && (
