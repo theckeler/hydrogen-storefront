@@ -4,7 +4,7 @@ import {usePredictiveSearch} from './usePredictiveSearch';
 import {PredictiveSearchResult} from './PredictiveSearchResult';
 import {NoPredictiveSearchResults} from './NoPredictiveSearchResults';
 
-export function PredictiveSearchResults() {
+export function PredictiveSearchResults({className}) {
   const {results, totalResults, searchInputRef, searchTerm} =
     usePredictiveSearch();
 
@@ -20,7 +20,7 @@ export function PredictiveSearchResults() {
     return <NoPredictiveSearchResults searchTerm={searchTerm} />;
   }
   return (
-    <div className="predictive-search-results">
+    <div className={'predictive-search-results ' + className}>
       <div>
         {results.map(({type, items}) => (
           <PredictiveSearchResult

@@ -1,7 +1,9 @@
 import {Form} from '@remix-run/react';
-import React, {useRef, useEffect} from 'react';
+import {useRef, useEffect} from 'react';
 import {Icons} from '../Icons';
 import {IconText} from '../IconText';
+import {PredictiveSearchResults} from '@/components/Search/PredictiveSearchResults';
+import {PredictiveSearchForm} from '@/components/Search/NoSearchResults';
 
 export const NO_PREDICTIVE_SEARCH_RESULTS = [
   {type: 'queries', items: []},
@@ -35,26 +37,43 @@ export function SearchForm({searchTerm, className, id}) {
   }, []);
 
   return (
-    <Form method="get" className={className} id={id}>
-      <div className="grid grid-cols-[1fr_4em] lg:grid-cols-[1fr_6em] w-full xl:max-w-xl">
-        <input
-          class="w-full rounded-l border-r-0 bg-sky-800 border-0 outline-0"
-          defaultValue={searchTerm}
-          name="q"
-          placeholder=""
-          ref={inputRef}
-          type="search"
-        />
-        <button
-          type="submit"
-          className="bg-sky-800 text-white p-2 h-full w-full flex justify-center items-center rounded-r border-l border-sky-700"
-        >
-          <div className="w-8 h-8">
-            <Icons icon="search" className="fill-white" />
+    <div className={className + ' relative'}>
+      <PredictiveSearchForm className="w-full xl:max-w-xl">
+        {/* <Form
+          method="get"
+          action="/search/"
+          className={className}
+          id={id}
+          heading="SEARCH"
+        > */}
+        {({fetchResults, inputRef}) => (
+          <div className="grid grid-cols-[1fr_4em] lg:grid-cols-[1fr_6em] ">
+            <input
+              name="q"
+              onChange={fetchResults}
+              onFocus={fetchResults}
+              placeholder="Search"
+              ref={inputRef}
+              type="search"
+              class="w-full rounded-l border-r-0 bg-sky-800 border-0 outline-0"
+            />
+            <button
+              type="submit"
+              className="bg-sky-800 text-white p-2 h-full w-full flex justify-center items-center rounded-r border-l border-sky-700"
+            >
+              <div className="w-8 h-8">
+                <Icons icon="search" className="fill-white" />
+              </div>
+              <IconText text="Search" className="ml-1 uppercase" />
+            </button>
           </div>
-          <IconText text="Search" className="ml-1 uppercase" />
-        </button>
+        )}
+        {/* </Form>*/}
+      </PredictiveSearchForm>
+
+      <div className="absolute z-30 top-[calc(100%-2px)] right-0 bg-white w-full xl:max-w-xl rounded-b shadow">
+        <PredictiveSearchResults className="p-4" />
       </div>
-    </Form>
+    </div>
   );
 }

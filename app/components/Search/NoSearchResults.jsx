@@ -11,7 +11,7 @@ export function NoSearchResults() {
 export function PredictiveSearchForm({
   action,
   children,
-  className = 'predictive-search-form',
+  className = '',
   method = 'POST',
   ...props
 }) {
