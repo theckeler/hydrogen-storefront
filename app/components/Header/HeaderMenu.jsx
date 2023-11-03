@@ -1,6 +1,7 @@
 import {NavLink, useMatches} from '@remix-run/react';
 import {CloseAside} from '@/components/Asides/CloseAside';
 import {HeaderAside} from '@/components/Asides/Header';
+import {Icons} from '../Icons';
 
 export function HeaderMenu({menu, viewport}) {
   const [root] = useMatches();
@@ -12,17 +13,35 @@ export function HeaderMenu({menu, viewport}) {
       role="navigation"
       id="main-menu"
     >
-      <div className="bg-white lg:bg-transparent gap-2 align-middle lg:flex flex-col lg:flex-row absolute lg:relative top-0 right-0 h-[calc(100vh-114px)] lg:h-auto max-h-screen min-h-[100dvh] lg:min-h-min max-w-2xl w-full drop-shadow lg:drop-shadow-none">
+      <div className="bg-white lg:bg-transparent gap-2 align-middle lg:flex flex-col lg:flex-row absolute lg:relative top-0 right-0 h-[calc(100vh-114px)] lg:h-auto max-h-screen min-h-[100dvh] lg:min-h-min w-full drop-shadow lg:drop-shadow-none">
         <HeaderAside heading={false} className="lg:hidden" />
         {/* {(menu || FALLBACK_HEADER_MENU).items.map((item) => { */}
 
-        <ul className="p-2">
+        <ul className="p-2 lg:flex gap-2">
           <li>
-            <NavLink to="/collections">Collections</NavLink>
+            <NavLink to="/collections" className="flex items-center">
+              <span className="h-8 w-8">
+                <Icons icon="arrowdropdown" />
+              </span>
+              Collections
+            </NavLink>
           </li>
-          <li>nav</li>
-          <li>nav</li>
-          <li>nav</li>
+          <li>
+            <NavLink to="/collections" className="flex items-center">
+              <span className="h-8 w-8">
+                <Icons icon="arrowdropdown" />
+              </span>
+              Collections
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/collections" className="flex items-center">
+              <span className="h-8 w-8">
+                <Icons icon="arrowdropdown" />
+              </span>
+              Collections
+            </NavLink>
+          </li>
           {/* {menu.items.map((item, i) => {
           // if (!item.url) return null;
 
@@ -49,6 +68,9 @@ export function HeaderMenu({menu, viewport}) {
           );
         })} */}
         </ul>
+        <div>
+          <ul></ul>
+        </div>
       </div>
     </nav>
   );
