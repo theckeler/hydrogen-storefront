@@ -5,7 +5,7 @@ import {Icons} from '../Icons';
 
 export function HeaderButtons({isLoggedIn, cart, className}) {
   const buttonCSS =
-    'max-w-[48px] lg:min-w-[60px] lg:max-w-auto lg:w-auto block p-2 rounded relative text-center lg:hover:bg-yellow-500 group';
+    'max-w-[48px] lg:min-w-[60px] lg:max-w-[120px] lg:w-auto block p-2 rounded relative text-center lg:hover:bg-yellow-500 group';
   const iconCSS = 'w-12 lg:max-h-8 fill-white xl:group-hover:fill-stone-800';
   const iconTextCSS = 'text-white xl:group-hover:text-stone-800';
 

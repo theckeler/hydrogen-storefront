@@ -1,17 +1,20 @@
+import {useState, useEffect} from 'react';
 import {NavLink, useMatches} from '@remix-run/react';
 // import {CloseAside} from '@/components/Asides/CloseAside';
 import {HeaderAside} from '@/components/Asides/Header';
 import {Icons} from '@/components/Icons';
+import {Image} from '@shopify/hydrogen-react';
 
 export function HeaderMenu({menu, viewport}) {
   const [root] = useMatches();
   const publicStoreDomain = root?.data?.publicStoreDomain;
-
   const linkCSS = 'flex items-center p-1 lg:p-3';
+
+  const [submenu, setSubmenu] = useState(false);
 
   return (
     <nav
-      className="z-0 fixed right-0 top-0 invisible lg:visible target:visible lg:relative target:z-50 w-full h-full"
+      className="z-0 lg:z-50 fixed right-0 top-0 invisible lg:visible target:visible lg:relative target:z-50 w-full h-full"
       role="navigation"
       id="main-menu"
     >
@@ -21,7 +24,12 @@ export function HeaderMenu({menu, viewport}) {
 
         <ul className="lg:flex gap-6">
           <li>
-            <button className={linkCSS}>
+            <button
+              className={linkCSS}
+              onClick={(e) => {
+                setSubmenu(!submenu);
+              }}
+            >
               <span className="h-6 w-6">
                 <Icons icon="arrowdropdown" />
               </span>
@@ -59,9 +67,54 @@ export function HeaderMenu({menu, viewport}) {
             </NavLink>
           </li>
         </ul>
-        <div>
-          <ul></ul>
-        </div>
+        {!!submenu && (
+          <div
+            className="absolute top-100 left-0 w-full bg-white shadow-lg border"
+            id="subnav"
+          >
+            <ul className="max-w-screen-2xl mx-auto w-full p-2 lg:p-4 grid grid-cols-4">
+              <li>
+                <ul>
+                  <li>
+                    <Image
+                      src="https://cdn.shopify.com/s/files/1/0688/1755/1382/products/GreenFrontpack.jpg?v=1675455064&width=1000&height=1000&crop=center"
+                      className="mb-2 border"
+                    />
+                    <h3 className="text-lg font-bold mb-1 pb-1 border-b border-stone-500">
+                      Proin porttitor auctor nisl
+                    </h3>
+                  </li>
+                  <li>
+                    <a href="#top" className="underline">
+                      Suspendisse convallis
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#top" className="underline">
+                      Suspendisse convallis
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#top" className="underline">
+                      Suspendisse convallis
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#top" className="underline">
+                      Suspendisse convallis
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#top" className="underline">
+                      Suspendisse convallis
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li></li>
+            </ul>
+          </div>
+        )}
       </div>
     </nav>
   );
