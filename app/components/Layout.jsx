@@ -15,8 +15,8 @@ export function Layout({cart, children = null, footer, header, isLoggedIn}) {
       <AccountAside />
 
       <div className="bg-stone-800">
-        <button className="max-w-screen-2xl mx-auto w-full text-sm text-yellow-500 flex items-center justify-center p-2 uppercase">
-          <span className="h-8">
+        <button className="max-w-screen-2xl mx-auto w-full text-xs text-yellow-500 flex items-center justify-center p-2 uppercase">
+          <span className="h-8 w-8">
             <Icons icon="arrowdropdown" className="fill-yellow-500" />
           </span>
           Lorem ipsum dolor sit amet

@@ -10,10 +10,7 @@ export function HeaderButtons({isLoggedIn, cart, className}) {
   const iconTextCSS = 'text-white xl:group-hover:text-stone-800';
 
   return (
-    <nav
-      role="navigation"
-      className={`flex justify-end gap-1 lg:gap-2 ${className}`}
-    >
+    <nav role="navigation" className={`flex justify-end lg:gap-2 ${className}`}>
       <a
         href="#search"
         className={buttonCSS + ' lg:hidden'}
