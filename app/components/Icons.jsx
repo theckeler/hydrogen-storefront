@@ -9,7 +9,12 @@ export function Icons({icon, className}) {
     arrowdropdown: ArrowDropDown,
     arrowdropup: ArrowDropUp,
     arrowright: ArrowRight,
+    arrowleft: ArrowLeft,
     close: Close,
+    expandmore: ExpandMore,
+    expandless: ExpandLess,
+    chevronright: ChevronRight,
+    chevronleft: ChevronLeft,
   };
   const IconExport = IconMap[icon];
   return <IconExport className={`h-full w-full ${className}`} />;
@@ -111,6 +116,18 @@ export function ArrowRight({className}) {
   );
 }
 
+export function ArrowLeft({className}) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 -960 960 960"
+      className={className}
+    >
+      <path d="M560-280 360-480l200-200v400Z" />
+    </svg>
+  );
+}
+
 export function Close({className}) {
   return (
     <svg
@@ -119,6 +136,54 @@ export function Close({className}) {
       className={className}
     >
       <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+    </svg>
+  );
+}
+
+export function ExpandMore({className}) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 -960 960 960"
+      className={className}
+    >
+      <path d="M480-345 240-585l56-56 184 184 184-184 56 56-240 240Z" />
+    </svg>
+  );
+}
+
+export function ExpandLess({className}) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 -960 960 960"
+      className={className}
+    >
+      <path d="m296-345-56-56 240-240 240 240-56 56-184-184-184 184Z" />
+    </svg>
+  );
+}
+
+export function ChevronRight({className}) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 -960 960 960"
+      className={className}
+    >
+      <path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z" />
+    </svg>
+  );
+}
+
+export function ChevronLeft({className}) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 -960 960 960"
+      className={className}
+    >
+      <path d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z" />
     </svg>
   );
 }

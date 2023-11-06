@@ -30,16 +30,16 @@ export function HeaderMenu({submenu, setSubmenu}) {
             >
               <span className="h-12 lg:h-6 w-12 lg:w-6 hidden lg:block">
                 {submenu ? (
-                  <Icons icon="arrowdropup" />
+                  <Icons icon="expandless" />
                 ) : (
                   <>
-                    <Icons icon="arrowdropdown" className="" />
+                    <Icons icon="expandmore" className="" />
                   </>
                 )}
               </span>
               Dropdown Menu
               <span className="h-12 w-12 ml-auto lg:hidden">
-                <Icons icon="arrowright" className="" />
+                <Icons icon="chevronright" className="" />
               </span>
             </a>
           </li>
@@ -80,7 +80,17 @@ export function HeaderMenu({submenu, setSubmenu}) {
             id="subnav"
             role="navigation"
           >
-            <HeaderAside heading={false} className="lg:hidden" />
+            <HeaderAside
+              heading={
+                <div className="flex items-center uppercase">
+                  <span className="h-12 w-12 lg:hidden">
+                    <Icons icon="chevronleft" className="" />
+                  </span>
+                  Return to Main Menu
+                </div>
+              }
+              className="lg:hidden"
+            />
             <ul className="max-w-screen-2xl mx-auto w-full p-2 lg:p-4 grid lg:grid-cols-4">
               <li>
                 <ul>
