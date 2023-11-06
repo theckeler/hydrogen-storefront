@@ -1,3 +1,5 @@
+import {useState, useEffect} from 'react';
+
 import {Footer} from '~/components/Footer';
 import {Header} from './Header';
 import {SearchAside} from './Asides/SearchAside';
@@ -8,6 +10,8 @@ import {HeaderMenu} from '@/components/Header/HeaderMenu';
 import {Icons} from '@/components/Icons';
 
 export function Layout({cart, children = null, footer, header, isLoggedIn}) {
+  const [submenu, setSubmenu] = useState(false);
+
   return (
     <>
       <CartAside cart={cart} />
@@ -29,7 +33,7 @@ export function Layout({cart, children = null, footer, header, isLoggedIn}) {
         </div>
 
         <div className="max-w-screen-2xl mx-auto w-full bg-white p-2 lg:p-0">
-          <HeaderMenu />
+          <HeaderMenu submenu={submenu} setSubmenu={setSubmenu} />
         </div>
       </header>
 

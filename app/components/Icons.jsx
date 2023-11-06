@@ -7,6 +7,8 @@ export function Icons({icon, className}) {
     logout: Logout,
     hamburger: Hamburger,
     arrowdropdown: ArrowDropDown,
+    arrowdropup: ArrowDropUp,
+    arrowright: ArrowRight,
     close: Close,
   };
   const IconExport = IconMap[icon];
@@ -81,6 +83,30 @@ export function ArrowDropDown({className}) {
       className={className}
     >
       <path d="M480-360 280-560h400L480-360Z" />
+    </svg>
+  );
+}
+
+export function ArrowDropUp({className}) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 -960 960 960"
+      className={className}
+    >
+      <path d="m280-400 200-200 200 200H280Z" />
+    </svg>
+  );
+}
+
+export function ArrowRight({className}) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 -960 960 960"
+      className={className}
+    >
+      <path d="M400-280v-400l200 200-200 200Z" />
     </svg>
   );
 }

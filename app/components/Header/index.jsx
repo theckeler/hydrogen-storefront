@@ -2,7 +2,6 @@
 import {HeaderButtons} from './HeaderButtons';
 import {HeaderLogo} from './HeaderLogo';
 import {SearchForm} from '@/components/Search/';
-import {Icons} from '@/components/Icons';
 import {HeaderCtas} from './HeaderCtas';
 
 export function Header({header, isLoggedIn, cart}) {
