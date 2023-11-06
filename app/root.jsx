@@ -14,7 +14,7 @@ import {
 } from '@remix-run/react';
 import favicon from '../public/favicon.svg';
 import appStyles from './styles/app.css';
-import {Layout} from '~/components/Layout';
+import {Layout} from './components/Layout';
 import tailwindCss from './styles/tailwind.css';
 
 // This is important to avoid re-fetching root queries on sub-navigations
@@ -82,7 +82,7 @@ export default function App() {
   const nonce = useNonce();
   const data = useLoaderData();
 
-  console.log(data);
+  // console.log(data);
 
   return (
     <html lang="en">

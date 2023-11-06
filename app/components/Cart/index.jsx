@@ -6,14 +6,14 @@ export function CartMain({layout, cart}) {
   const withDiscount =
     cart &&
     Boolean(cart.discountCodes.filter((code) => code.applicable).length);
-  const className = `cart-main ${withDiscount ? 'with-discount' : ''}`;
+  const className = `${withDiscount ? 'with-discount' : ''}`;
 
   return (
-    <div className={className}>
+    <div className="p-2">
       {!!cart && cart.totalQuantity > 0 ? (
-        <CartDetails cart={cart} layout={layout} />
+        <CartDetails cart={cart} />
       ) : (
-        <CartEmpty hidden={linesCount} layout={layout} />
+        <CartEmpty hidden={linesCount} />
       )}
     </div>
   );

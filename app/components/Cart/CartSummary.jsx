@@ -1,15 +1,12 @@
 import {Money} from '@shopify/hydrogen';
 
-export function CartSummary({cost, layout, children = null}) {
-  const className =
-    layout === 'page' ? 'cart-summary-page' : 'cart-summary-aside';
-
+export function CartSummary({className, cost, children = null}) {
   return (
-    <div aria-labelledby="cart-summary" className={className}>
-      <h4>Totals</h4>
-      <dl className="cart-subtotal">
+    <div className={className}>
+      <h4 className="border-yellow-300 border-b-2 pb-1 mb-1">Totals</h4>
+      <dl className="grid grid-cols-[1fr_minmax(100px,_200px)]">
         <dt>Subtotal</dt>
-        <dd>
+        <dd className="text-right">
           {cost?.subtotalAmount?.amount ? (
             <Money data={cost?.subtotalAmount} />
           ) : (

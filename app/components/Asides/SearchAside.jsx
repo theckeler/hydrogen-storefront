@@ -2,9 +2,9 @@ import {Aside} from '~/components/Asides';
 import {PredictiveSearchForm} from '../Search/NoSearchResults';
 import {PredictiveSearchResults} from '../Search/PredictiveSearchResults';
 
-export function SearchAside() {
+export function SearchAside({className, handleMenuClose}) {
   return (
-    <Aside id="search-aside" heading="SEARCH">
+    <Aside id="search" heading="SEARCH" handleMenuClose={handleMenuClose}>
       <div className="predictive-search">
         <PredictiveSearchForm>
           {({fetchResults, inputRef}) => (

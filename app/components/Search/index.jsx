@@ -55,7 +55,7 @@ export function SearchForm({searchTerm, className, id}) {
               placeholder="Search"
               ref={inputRef}
               type="search"
-              class="w-full rounded-l border-r-0 bg-sky-800 border-0 outline-0"
+              className="w-full rounded-l border-r-0 bg-sky-800 border-0 outline-0"
             />
             <button
               type="submit"

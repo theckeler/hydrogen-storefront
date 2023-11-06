@@ -3,7 +3,7 @@ import {Suspense} from 'react';
 import {IconText} from '../IconText';
 import {Icons} from '../Icons';
 
-export function HeaderButtons({isLoggedIn, cart, className}) {
+export function HeaderButtons({isLoggedIn, cart, className, handleMenuOpen}) {
   const buttonCSS =
     'max-w-[48px] lg:min-w-[60px] lg:max-w-[120px] lg:w-auto block p-2 rounded relative text-center lg:hover:bg-yellow-500 group';
   const iconCSS = 'w-12 lg:max-h-8 fill-white xl:group-hover:fill-stone-800';
@@ -15,14 +15,20 @@ export function HeaderButtons({isLoggedIn, cart, className}) {
         href="#search"
         className={buttonCSS + ' lg:hidden'}
         onClick={(e) => {
-          e.currentTarget.classList.add('hidden');
+          handleMenuOpen('search');
         }}
       >
         <Icons icon="search" className={iconCSS} />
         <IconText text="Search" className={iconTextCSS} />
       </a>
 
-      <a href="#account-aside" className={buttonCSS}>
+      <a
+        href="#account"
+        onClick={() => {
+          handleMenuOpen('account');
+        }}
+        className={buttonCSS}
+      >
         {isLoggedIn ? (
           <Icons icon="logout" className={iconCSS} />
         ) : (
@@ -35,7 +41,13 @@ export function HeaderButtons({isLoggedIn, cart, className}) {
         <Await resolve={cart}>
           {(cart) => {
             return (
-              <a href="#cart-aside" className={buttonCSS}>
+              <a
+                href="#cart"
+                onClick={() => {
+                  handleMenuOpen('cart');
+                }}
+                className={buttonCSS}
+              >
                 <Icons icon="cart" className={iconCSS} />
                 {cart?.totalQuantity > 0 && (
                   <div
@@ -52,7 +64,14 @@ export function HeaderButtons({isLoggedIn, cart, className}) {
         </Await>
       </Suspense>
 
-      <a href="#main-menu" className={buttonCSS + ' lg:hidden'}>
+      <a
+        href="#main-menu"
+        onClick={() => {
+          console.log('main menu');
+          handleMenuOpen('main-menu');
+        }}
+        className={buttonCSS + ' lg:hidden'}
+      >
         <Icons icon="hamburger" className={iconCSS} />
       </a>
     </nav>

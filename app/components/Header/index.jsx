@@ -4,7 +4,7 @@ import {HeaderLogo} from './HeaderLogo';
 import {SearchForm} from '@/components/Search/';
 import {HeaderCtas} from './HeaderCtas';
 
-export function Header({header, isLoggedIn, cart}) {
+export function Header({header, isLoggedIn, cart, handleMenuOpen}) {
   const {shop} = header;
   return (
     <div className="max-w-screen-2xl mx-auto px-2 2xl:px-0 py-1 lg:py-2 grid grid-cols-[140px_1fr] lg:grid-cols-[200px_1fr_300px_130px] lg:gap-4 items-center w-full">
@@ -13,6 +13,7 @@ export function Header({header, isLoggedIn, cart}) {
         className="lg:col-start-4"
         isLoggedIn={isLoggedIn}
         cart={cart}
+        handleMenuOpen={handleMenuOpen}
       />
       <HeaderCtas />
       <SearchForm

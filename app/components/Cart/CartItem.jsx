@@ -4,21 +4,25 @@ import {useVariantUrl} from '~/utils';
 import {CartLinePrice} from './CartLinePrice';
 import {CartLineQuantity} from './CartLineQuantity';
 
-export function CartLineItem({layout, line}) {
+export function CartItem({layout, line}) {
   const {id, merchandise} = line;
   const {product, title, image, selectedOptions} = merchandise;
   const lineItemUrl = useVariantUrl(product.handle, selectedOptions);
 
   return (
-    <li key={id} className="cart-line">
+    <li
+      key={id}
+      className="grid grid-cols-[minmax(40px,_100px)_1fr] gap-4 border-b pb-2 mb-2"
+    >
       {image && (
         <Image
           alt={title}
           aspectRatio="1/1"
           data={image}
           height={100}
-          loading="lazy"
           width={100}
+          loading="lazy"
+          className="w-100 h-100 border"
         />
       )}
 

@@ -15,8 +15,8 @@
     "baseUrl": ".",
     "paths": {
       "~/*": ["app/*"],
-      "@/*": ["./*"],
-      "@/components/*": ["app/components/*"]
+      "@/components/*": ["app/components/*"],
+      "@/c/*": ["app/components/*"]
     }
   },
   "include": ["./**/*.js", "./**/*.jsx"]
