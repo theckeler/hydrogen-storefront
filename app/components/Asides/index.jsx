@@ -34,7 +34,7 @@ export function Aside({
         handleMenuClose={handleMenuClose}
       />
       <div
-        className={`absolute right-0 top-0 z-40 w-full md:auto h-[calc(100vh-114px)] max-h-screen min-h-[100dvh] max-w-2xl ${
+        className={`grid grid-row-[65px_1fr] absolute right-0 top-0 z-40 w-full md:auto h-screen max-h-screen min-h-[100dvh] max-w-2xl ${
           subnav
             ? 'lg:h-auto lg:max-h-min lg:max-w-full lg:min-h-min bg-neutral-100'
             : 'bg-stone-100'
@@ -45,7 +45,9 @@ export function Aside({
           handleMenuClose={handleMenuClose}
           className={subnav ? 'lg:hidden w-full' : ''}
         />
-        {children}
+        <div className="overflow-y-auto h-[cal(100vh-65px)] max-h-screen min-h-[cal(100dvh-65px)] pb-10">
+          {children}
+        </div>
       </div>
     </div>
   );

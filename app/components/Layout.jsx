@@ -11,25 +11,33 @@ import {MainMenuAside} from './Asides/MainMenuAside';
 import {HeaderMenuMain} from './Header/HeaderMenuMain';
 import {SubMenuAside} from './Asides/SubMenuAside';
 
-export function Layout({cart, children = null, header, isLoggedIn}) {
-  const url = useLocation();
-  const navigate = useNavigate();
+export function Layout({
+  cart,
+  children = null,
+  header,
+  isLoggedIn,
+  handleMenuOpen,
+  handleMenuClose,
+  submenu,
+}) {
+  // const url = useLocation();
+  // const navigate = useNavigate();
 
-  const updateMenu = url.hash.replace('#', '');
-  const [submenu, setSubmenu] = useState(updateMenu ? updateMenu : false);
+  // const updateMenu = url.hash.replace('#', '');
+  // const [submenu, setSubmenu] = useState(updateMenu ? updateMenu : false);
 
-  function handleMenuOpen(menu) {
-    submenu === menu ? setSubmenu(false) : setSubmenu(menu);
-  }
+  // function handleMenuOpen(menu) {
+  //   submenu === menu ? setSubmenu(false) : setSubmenu(menu);
+  // }
 
-  function handleMenuClose() {
-    setSubmenu(false);
-    navigate(url.pathname);
-  }
+  // function handleMenuClose() {
+  //   setSubmenu(false);
+  //   navigate(url.pathname);
+  // }
 
-  useEffect(() => {
-    console.log('submenu: ', submenu);
-  }, [submenu]);
+  // useEffect(() => {
+  //   console.log('submenu: ', submenu);
+  // }, [submenu]);
 
   return (
     <>

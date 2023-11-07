@@ -15,6 +15,8 @@ import {
 import favicon from '../public/favicon.svg';
 import {Layout} from './components/Layout';
 import tailwindCss from './styles/tailwind.css';
+import {useState, useEffect} from 'react';
+import {useLocation, useNavigate} from 'react-router-dom';
 
 // This is important to avoid re-fetching root queries on sub-navigations
 export const shouldRevalidate = ({formMethod, currentUrl, nextUrl}) => {
@@ -82,6 +84,25 @@ export default function App() {
 
   // console.log(data);
 
+  const url = useLocation();
+  const navigate = useNavigate();
+
+  const updateMenu = url.hash.replace('#', '');
+  const [submenu, setSubmenu] = useState(updateMenu ? updateMenu : false);
+
+  function handleMenuOpen(menu) {
+    submenu === menu ? setSubmenu(false) : setSubmenu(menu);
+  }
+
+  function handleMenuClose() {
+    setSubmenu(false);
+    navigate(url.pathname);
+  }
+
+  useEffect(() => {
+    console.log('submenu: ', submenu);
+  }, [submenu]);
+
   return (
     <html lang="en">
       <head>
@@ -90,8 +111,15 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body>
-        <Layout {...data}>
+      <body
+        className={submenu && submenu !== 'subnav' ? 'overflow-hidden' : ''}
+      >
+        <Layout
+          {...data}
+          handleMenuOpen={handleMenuOpen}
+          handleMenuClose={handleMenuClose}
+          submenu={submenu}
+        >
           <Outlet />
         </Layout>
         <ScrollRestoration nonce={nonce} />
