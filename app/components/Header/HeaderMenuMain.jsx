@@ -1,12 +1,14 @@
 import {NavLink, useMatches} from '@remix-run/react';
 import {Icons} from '@/components/Icons';
 
-export function HeaderMenuMain({submenu, handleMenuOpen}) {
+export function HeaderMenuMain({className, submenu, handleMenuOpen}) {
   const linkCSS = 'flex items-center p-2 lg:p-3 w-full';
   const linkActiveCSS = 'text-sky-800 fill-sky-800 bg-neutral-200';
 
   return (
-    <ul className="lg:flex gap-6 text-4xl lg:text-base lg:font-bold overflow-y-auto">
+    <ul
+      className={`lg:flex gap-6 text-4xl lg:text-base lg:font-bold overflow-y-auto ${className}`}
+    >
       <li>
         <a
           href="#subnav"

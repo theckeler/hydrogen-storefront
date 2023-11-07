@@ -17,26 +17,31 @@ export function Aside({
   heading,
   id = 'aside',
   handleMenuClose,
+  subnav = false,
 }) {
   return (
     <div
-      aria-modal
-      // className="fixed opacity-0 inset-0 z-0 invisible target:visible target:opacity-100 target:pointer-events-auto target:z-50"
-      className={className + ' fixed top-0 left-0 z-30 h-screen w-screen '}
+      className={`fixed top-0 left-0 z-30 ${
+        subnav === true ? 'subnav' : ''
+      } ${className}`}
       id={id}
-      role="dialog"
     >
       <CloseAside
-        className="w-full h-full bg-blue-200/90"
+        className="w-screen h-screen bg-blue-200/90 lg:hidden"
         svg={false}
         handleMenuClose={handleMenuClose}
       />
       <div
-        //className="absolute right-0 top-0 lg:drop-shadow flex flex-col h-[calc(100vh-114px)] max-h-screen min-h-[100dvh] bg-white max-w-2xl w-full md:auto"
-        className="absolute right-0 top-0 z-40 bg-white max-w-2xl w-full md:auto h-[calc(100vh-114px)] max-h-screen min-h-[100dvh]"
+        className={`absolute right-0 top-0 z-40 bg-white w-full md:auto h-[calc(100vh-114px)] max-h-screen min-h-[100dvh] max-w-2xl ${
+          subnav ? 'lg:h-auto lg:max-h-min lg:max-w-full lg:min-h-min' : ''
+        }`}
       >
-        <HeaderAside heading={heading} handleMenuClose={handleMenuClose} />
-        <main>{children}</main>
+        <HeaderAside
+          heading={heading}
+          handleMenuClose={handleMenuClose}
+          className={subnav ? 'lg:hidden w-full' : ''}
+        />
+        {children}
       </div>
     </div>
   );

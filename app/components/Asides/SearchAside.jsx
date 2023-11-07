@@ -4,7 +4,12 @@ import {PredictiveSearchResults} from '../Search/PredictiveSearchResults';
 
 export function SearchAside({className, handleMenuClose}) {
   return (
-    <Aside id="search" heading="SEARCH" handleMenuClose={handleMenuClose}>
+    <Aside
+      className={className}
+      id="search"
+      heading="SEARCH"
+      handleMenuClose={handleMenuClose}
+    >
       <div className="predictive-search">
         <PredictiveSearchForm>
           {({fetchResults, inputRef}) => (

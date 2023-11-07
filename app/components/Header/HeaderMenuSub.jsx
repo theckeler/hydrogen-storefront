@@ -1,10 +1,9 @@
 import {Image} from '@shopify/hydrogen-react';
 
 export function HeaderMenuSub({className, setSubmenu, handleMenuClose}) {
-  
   return (
     <ul
-      className={`max-w-screen-2xl mx-auto w-full p-2 lg:p-4 grid lg:grid-cols-4 ${className}`}
+      className={`max-w-screen-2xl mx-auto w-full p-2 lg:p-4 grid md:grid-cols-2 lg:grid-cols-4 ${className}`}
     >
       <li>
         <ul>

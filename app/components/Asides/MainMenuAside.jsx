@@ -8,7 +8,11 @@ export function MainMenuAside({
   handleMenuOpen,
 }) {
   return (
-    <Aside className="lg:hidden" id="main-menu" handleMenuClose={handleMenuClose}>
+    <Aside
+      className={`${className} lg:hidden`}
+      id="main-menu"
+      handleMenuClose={handleMenuClose}
+    >
       <HeaderMenuMain submenu={submenu} handleMenuOpen={handleMenuOpen} />
     </Aside>
   );

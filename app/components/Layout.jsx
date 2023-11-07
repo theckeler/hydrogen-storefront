@@ -7,9 +7,9 @@ import {SearchAside} from './Asides/SearchAside';
 import {CartAside} from './Asides/CartAside';
 import {AccountAside} from './Asides/AccountAside';
 import {Icons} from '@/components/Icons';
-import {HeaderMenuSub} from './Header/HeaderMenuSub';
 import {MainMenuAside} from './Asides/MainMenuAside';
 import {HeaderMenuMain} from './Header/HeaderMenuMain';
+import {SubMenuAside} from './Asides/SubMenuAside';
 
 export function Layout({cart, children = null, header, isLoggedIn}) {
   const url = useLocation();
@@ -34,13 +34,18 @@ export function Layout({cart, children = null, header, isLoggedIn}) {
   return (
     <>
       <CartAside
-        className={submenu == 'cart' ? 'block' : 'hidden'}
+        className={`${
+          submenu == 'cart' ? 'block' : 'hidden'
+        } h-screen w-screen `}
         cart={cart}
         handleMenuClose={handleMenuClose}
       />
 
       {submenu === 'search' && (
-        <SearchAside handleMenuClose={handleMenuClose} />
+        <SearchAside
+          handleMenuClose={handleMenuClose}
+          className="h-screen w-screen"
+        />
       )}
 
       {submenu === 'main-menu' && (
@@ -48,11 +53,15 @@ export function Layout({cart, children = null, header, isLoggedIn}) {
           submenu={submenu}
           handleMenuClose={handleMenuClose}
           handleMenuOpen={handleMenuOpen}
+          className="h-screen w-screen"
         />
       )}
 
       {submenu === 'account' && (
-        <AccountAside handleMenuClose={handleMenuClose} />
+        <AccountAside
+          handleMenuClose={handleMenuClose}
+          className="h-screen w-screen"
+        />
       )}
 
       <div className="bg-stone-800">
@@ -74,24 +83,27 @@ export function Layout({cart, children = null, header, isLoggedIn}) {
           />
         </div>
 
-        <div className="max-w-screen-2xl mx-auto w-full lg:p-0 hidden lg:block">
+        <div className="max-w-screen-2xl mx-auto w-full lg:p-0">
           <HeaderMenuMain
             handleMenuOpen={handleMenuOpen}
             handleMenuClose={handleMenuClose}
             submenu={submenu === 'subnav' ? true : false}
+            className="hidden lg:block"
           />
-        </div>
 
-        <div className="bg-white z-40 max-w-screen-2xl mx-auto w-full p-2 lg:p-0 relative h-0 hidden lg:block">
+          {/* <div className="z-40 p-2 lg:p-0 relative h-0 hidden lg:block"> */}
           {submenu === 'subnav' && (
-            <HeaderMenuSub className="lg:absolute lg:shadow-lg bg-white" />
+            <SubMenuAside
+              className="lg:relative h-0 m-h-0 w-full"
+              handleMenuClose={handleMenuClose}
+              handleMenuOpen={handleMenuOpen}
+            />
           )}
+          {/* </div> */}
         </div>
       </header>
 
-      <main className="max-w-screen-2xl mx-auto w-full">
-        {children}
-      </main>
+      <main className="max-w-screen-2xl mx-auto w-full">{children}</main>
 
       <Footer />
     </>

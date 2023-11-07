@@ -198,7 +198,7 @@ function ProductForm({product, selectedVariant, variants}) {
       <AddToCartButton
         disabled={!selectedVariant || !selectedVariant.availableForSale}
         onClick={() => {
-          window.location.href = window.location.href + '#cart-aside';
+          window.location.href = window.location.href + '#cart';
         }}
         lines={
           selectedVariant
