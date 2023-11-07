@@ -12,19 +12,27 @@ export function RecommendedProducts({products, className}) {
         <Await resolve={products}>
           {({products}) => (
             <div className="grid grid-cols-2 lg:grid-cols-5 gap-2 lg:gap-4">
-              <h2
+              <div
                 className={
                   blockCSS +
-                  ' grid-cols-[1fr_34px] lg:bg-yellow-400 p-2 col-span-full lg:col-span-1'
+                  ' p-2 col-span-full lg:col-span-1 lg:bg-neutral-800'
                 }
               >
-                <span className="lg:text-right font-light">
-                  Recommended Products
-                </span>
-                <span className="h-8 w-8 hidden lg:inline-block">
-                  <Icons icon="chevronright" className="fill-neutral-800" />
-                </span>
-              </h2>
+                <Image
+                  src="https://cdn.shopify.com/s/files/1/0688/1755/1382/collections/cd_a_neatly_arranged_photo_of_mens_clothes_t-shirt_gray_hoodie__c5a4ebe4-ccb1-4d94-ae56-a1b33b4e71d9_1.png?v=1675456349&width=1600&height=1600&crop=center"
+                  aspectRatio="1/1"
+                  sizes="(min-width: 200px) 20vw, 40vw"
+                  className="absolute w-full h-full object-cover z-0 opacity-20 hidden lg:block"
+                />
+                <div className="relative z-10 grid items-center grid-cols-[1fr_34px] lg:bg-stone-100 py-2 px-4 rounded-3xl shadow">
+                  <h2 className="lg:text-right font-bold lg:font-normal text-lg lg:text-xs">
+                    Recommended Products
+                  </h2>
+                  <span className="h-8 w-8 hidden lg:inline-block">
+                    <Icons icon="chevronright" className="fill-neutral-800" />
+                  </span>
+                </div>
+              </div>
 
               {products.nodes.map((product) => (
                 <Link

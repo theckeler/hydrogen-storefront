@@ -9,7 +9,7 @@ export function FeaturedCollection({collection}) {
     <Link className="" to={`/collections/${collection.handle}`}>
       {image && (
         <div className="relative min-h-[300px] bg-black grid content-center ">
-          <div className="p-4 lg:p-8 text-white relative z-10">
+          <div className="py-8 px-4 md:p-8 text-white relative z-10">
             <h1 className="text-xl lg:text-3xl font-bold mb-4">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit
             </h1>
@@ -22,11 +22,11 @@ export function FeaturedCollection({collection}) {
               massa.
             </p>
 
-            <button className="grid grid-cols-[1fr_34px] items-center bg-yellow-400 rounded-3xl py-2 px-6 shadow text-black mt-6">
+            <button className="grid grid-cols-[1fr_34px] items-center bg-yellow-400 rounded-3xl py-2 px-6 shadow text-black mt-6 w-full sm:w-auto">
               <span className="lg:text-right font-bold">
                 View Featured Collection
               </span>
-              <span className="h-8 w-8 hidden lg:inline-block">
+              <span className="h-8 w-8">
                 <Icons icon="chevronright" className="fill-neutral-800" />
               </span>
             </button>
