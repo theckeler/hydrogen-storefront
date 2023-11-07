@@ -94,7 +94,7 @@ export function Layout({cart, children = null, header, isLoggedIn}) {
           {/* <div className="z-40 p-2 lg:p-0 relative h-0 hidden lg:block"> */}
           {submenu === 'subnav' && (
             <SubMenuAside
-              className="lg:relative h-0 m-h-0 w-full"
+              className="lg:relative h-0 m-h-0 w-full lg:shadow-lg"
               handleMenuClose={handleMenuClose}
               handleMenuOpen={handleMenuOpen}
             />

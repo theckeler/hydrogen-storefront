@@ -3,7 +3,7 @@ import {Icons} from '@/components/Icons';
 
 export function HeaderMenuMain({className, submenu, handleMenuOpen}) {
   const linkCSS = 'flex items-center p-2 lg:p-3 w-full';
-  const linkActiveCSS = 'text-sky-800 fill-sky-800 bg-neutral-200';
+  const linkActiveCSS = 'text-sky-800 fill-sky-800 bg-neutral-100';
 
   return (
     <ul

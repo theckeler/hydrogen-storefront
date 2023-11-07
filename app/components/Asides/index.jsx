@@ -34,8 +34,10 @@ export function Aside({
         handleMenuClose={handleMenuClose}
       />
       <div
-        className={`absolute right-0 top-0 z-40 bg-white w-full md:auto h-[calc(100vh-114px)] max-h-screen min-h-[100dvh] max-w-2xl ${
-          subnav ? 'lg:h-auto lg:max-h-min lg:max-w-full lg:min-h-min' : ''
+        className={`absolute right-0 top-0 z-40 w-full md:auto h-[calc(100vh-114px)] max-h-screen min-h-[100dvh] max-w-2xl ${
+          subnav
+            ? 'lg:h-auto lg:max-h-min lg:max-w-full lg:min-h-min bg-neutral-100'
+            : 'bg-stone-100'
         }`}
       >
         <HeaderAside

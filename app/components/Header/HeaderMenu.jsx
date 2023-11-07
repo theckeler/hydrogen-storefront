@@ -13,7 +13,7 @@ export function HeaderMenu({
   const [root] = useMatches();
   const publicStoreDomain = root?.data?.publicStoreDomain;
   const linkCSS = 'flex items-center p-2 lg:p-3 w-full';
-  const linkActiveCSS = 'text-sky-800 fill-sky-800 bg-neutral-200';
+  const linkActiveCSS = 'text-sky-800 fill-sky-800 bg-neutral-100';
   // const navCSS =
   //   'z-40 lg:z-40 fixed invisible lg:visible target:visible target:z-40 select-none';
 

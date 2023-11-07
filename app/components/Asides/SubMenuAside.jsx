@@ -19,7 +19,7 @@ export function SubMenuAside({className, handleMenuClose, handleMenuOpen}) {
         </button>
       }
     >
-      <HeaderMenuSub className="lg:absolute lg:shadow-lg bg-white" />
+      <HeaderMenuSub className="lg:absolute lg:shadow-lg bg-neutral-100" />
     </Aside>
   );
 }
