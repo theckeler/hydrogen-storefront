@@ -27,7 +27,9 @@ export function Aside({
       id={id}
     >
       <CloseAside
-        className="w-screen h-screen bg-blue-200/90 lg:hidden"
+        className={`${
+          subnav ? 'w-screen h-screen lg:w-0 lg:h-0' : 'w-screen h-screen'
+        } bg-stone-800/90`}
         svg={false}
         handleMenuClose={handleMenuClose}
       />
