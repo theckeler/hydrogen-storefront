@@ -29,7 +29,7 @@ export function RecommendedProducts({products, className}) {
                     Recommended Products
                   </h2>
                   <span className="h-8 w-8 hidden lg:inline-block">
-                    <Icons icon="chevronright" className="fill-neutral-800" />
+                    <Icons icon="arrowright" className="fill-neutral-800" />
                   </span>
                 </div>
               </div>
