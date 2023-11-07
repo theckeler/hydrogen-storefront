@@ -6,7 +6,7 @@ export function HeaderMenuMain({submenu, handleMenuOpen}) {
   const linkActiveCSS = 'text-sky-800 fill-sky-800 bg-neutral-200';
 
   return (
-    <ul className="lg:flex gap-6 border-b border-neutral-200 text-4xl lg:text-base lg:font-bold overflow-y-auto">
+    <ul className="lg:flex gap-6 text-4xl lg:text-base lg:font-bold overflow-y-auto">
       <li>
         <a
           href="#subnav"
@@ -17,7 +17,7 @@ export function HeaderMenuMain({submenu, handleMenuOpen}) {
           }}
         >
           <span className="h-12 lg:h-6 w-12 lg:w-6 hidden lg:block">
-            {submenu  ? (
+            {submenu ? (
               <Icons icon="expandless" />
             ) : (
               <Icons icon="expandmore" className="" />

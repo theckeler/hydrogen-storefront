@@ -1,7 +1,8 @@
 import {defer} from '@shopify/remix-oxygen';
 import {useLoaderData} from '@remix-run/react';
-import {FeaturedCollection} from '../components/Collections/FeaturedCollection';
-import {RecommendedProducts} from '../components/Collections/RecommendedProducts';
+// import {FeaturedCollection} from '../components/Collections/FeaturedCollection';
+// import {RecommendedProducts} from '../components/Collections/RecommendedProducts';
+import HomeIndex from '../components/HomePage';
 
 export const meta = () => {
   return [{title: 'Hydrogen | Home'}];
@@ -16,14 +17,19 @@ export async function loader({context}) {
   return defer({featuredCollection, recommendedProducts});
 }
 
-export default function Homepage() {
+// export default function Homepage() {
+//   const data = useLoaderData();
+//   return (
+//     <>
+//       <FeaturedCollection collection={data.featuredCollection} />
+//       <RecommendedProducts products={data.recommendedProducts} />
+//     </>
+//   );
+// }
+
+export default function Index() {
   const data = useLoaderData();
-  return (
-    <>
-      <FeaturedCollection collection={data.featuredCollection} />
-      <RecommendedProducts products={data.recommendedProducts} />
-    </>
-  );
+  return <HomeIndex data={data} />;
 }
 
 const FEATURED_COLLECTION_QUERY = `#graphql

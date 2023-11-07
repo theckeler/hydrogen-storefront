@@ -6,12 +6,9 @@ import {Header} from './Header';
 import {SearchAside} from './Asides/SearchAside';
 import {CartAside} from './Asides/CartAside';
 import {AccountAside} from './Asides/AccountAside';
-// import {SearchForm} from './Search';
-// import {HeaderMenu} from '@/components/Header/HeaderMenu';
 import {Icons} from '@/components/Icons';
 import {HeaderMenuSub} from './Header/HeaderMenuSub';
 import {MainMenuAside} from './Asides/MainMenuAside';
-// import {Aside} from '@/components/Asides/';
 import {HeaderMenuMain} from './Header/HeaderMenuMain';
 
 export function Layout({cart, children = null, header, isLoggedIn}) {
@@ -20,7 +17,6 @@ export function Layout({cart, children = null, header, isLoggedIn}) {
 
   const updateMenu = url.hash.replace('#', '');
   const [submenu, setSubmenu] = useState(updateMenu ? updateMenu : false);
-  // const [submenu, setSubmenu] = useState(false);
 
   function handleMenuOpen(menu) {
     submenu === menu ? setSubmenu(false) : setSubmenu(menu);
@@ -34,8 +30,6 @@ export function Layout({cart, children = null, header, isLoggedIn}) {
   useEffect(() => {
     console.log('submenu: ', submenu);
   }, [submenu]);
-
-  const navCSS = 'select-none';
 
   return (
     <>
@@ -80,7 +74,7 @@ export function Layout({cart, children = null, header, isLoggedIn}) {
           />
         </div>
 
-        <div className="max-w-screen-2xl mx-auto w-full p-2 lg:p-0 hidden lg:block">
+        <div className="max-w-screen-2xl mx-auto w-full lg:p-0 hidden lg:block">
           <HeaderMenuMain
             handleMenuOpen={handleMenuOpen}
             handleMenuClose={handleMenuClose}
@@ -95,7 +89,7 @@ export function Layout({cart, children = null, header, isLoggedIn}) {
         </div>
       </header>
 
-      <main className="max-w-screen-2xl mx-auto w-full px-2 2xl:p-0">
+      <main className="max-w-screen-2xl mx-auto w-full">
         {children}
       </main>
 
