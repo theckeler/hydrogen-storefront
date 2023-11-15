@@ -1,39 +1,16 @@
-# Hydrogen template: Skeleton
+## Personal Project - Front End Design and Development of Shopify's Hydrogen
 
-Hydrogen is Shopify’s stack for headless commerce. Hydrogen is designed to dovetail with [Remix](https://remix.run/), Shopify’s full stack web framework. This template contains a **minimal setup** of components, queries and tooling to get started with Hydrogen.
+[demo](https://hydrogen.consumedesign.com/)
 
-[Check out Hydrogen docs](https://shopify.dev/custom-storefronts/hydrogen)
-[Get familiar with Remix](https://remix.run/docs/en/v1)
+A personal project to build a dynamic website using React and Shopify Hydrogen. The work is ongoing, focusing on delivering a user-friendly, mobile-responsive digital experience. The goal is to create a platform showcasing innovation and creativity.
 
-## What's included
+Please note that details and aspects of the project are subject to change as development continues.
 
-- Remix
-- Hydrogen
-- Oxygen
-- Shopify CLI
-- ESLint
-- Prettier
-- GraphQL generator
-- TypeScript and JavaScript flavors
-- Minimal setup of components and routes
+Skills: JavaScript · Cascading Style Sheets (CSS) · HTML · React.js · Front-end Development · User Experience Design (UED) · Tailwind CSS · Interaction Design · UI · UX · Responsive Web Design · HTML5 · Web Design · Web Development · User Interface Design · Website Development · Visual Studio · Microsoft Visual Studio Code · Node.js
 
-## Getting started
+[consume:design](https://www.linkedin.com/in/consumedesign/)
 
-**Requirements:**
-
-- Node.js version 16.14.0 or higher
-
-```bash
-npm create @shopify/hydrogen@latest
-```
-
-## Building for production
-
-```bash
-npm run build
-```
-
-## Local development
+## Getting Started
 
 ```bash
 npm run dev
